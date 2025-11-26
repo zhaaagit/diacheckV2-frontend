@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>DiaCheck Indonesia | Cek Risiko Diabetes AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-wrapper">
+      <a href="#" class="brand">
+        <div class="brand-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v12m-6-6h12"/></svg>
+        </div>
+        <span>DiaCheck</span>
+      </a>
+      <div class="nav-menu">
+        <a href="#assessment" class="btn btn-sm btn-primary">Mulai Cek &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <div class="badge-pill">✨ Akurasi Tinggi v2.1</div>
+        <h1>Cek Risiko Diabetes <br><span class="text-gradient">Berbasis Data.</span></h1>
+        <p class="hero-desc">
+          Analisis risiko kesehatan Anda menggunakan AI yang mempertimbangkan faktor biologis, gaya hidup, dan sosial-ekonomi.
+        </p>
+        <a href="#assessment" class="btn btn-lg btn-primary shadow-lg">Mulai Analisis</a>
+      </div>
+      
+      <div class="hero-image">
+        <svg class="illustration-svg" viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <circle cx="200" cy="160" r="140" fill="#E0F2FE" fill-opacity="0.6"/>
+           <rect x="100" y="60" width="200" height="240" rx="24" fill="white" stroke="#E2E8F0" stroke-width="2" class="floating-card"/>
+           <rect x="130" y="100" width="40" height="40" rx="12" fill="#0EA5E9"/>
+           <rect x="185" y="110" width="80" height="8" rx="4" fill="#E2E8F0"/>
+           <rect x="185" y="125" width="50" height="8" rx="4" fill="#E2E8F0"/>
+           <rect x="130" y="170" width="140" height="8" rx="4" fill="#F1F5F9"/>
+           <rect x="130" y="190" width="140" height="8" rx="4" fill="#F1F5F9"/>
+           <rect x="130" y="210" width="100" height="8" rx="4" fill="#F1F5F9"/>
+           <rect x="130" y="250" width="140" height="32" rx="8" fill="#0EA5E9"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- Assessment Wizard -->
+  <section class="app-section" id="assessment">
+    <div class="wizard-container">
+      
+      <div class="wizard-header">
+        <div class="progress-info">
+          <span class="step-label">Langkah <span id="step-num">1</span> dari 4</span>
+          <span class="step-title">Profil Fisik</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-bar" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <form id="health-form" onsubmit="return false;">
+        <div class="wizard-content">
+          
+          <!-- STEP 1: PROFIL FISIK -->
+          <div class="step-slide active" id="slide-1">
+            <h3 class="slide-title">Profil Fisik Dasar</h3>
+            
+            <div class="form-group">
+              <label class="input-label">Jenis Kelamin</label>
+              <div class="radio-group">
+                <label class="radio-card">
+                  <input type="radio" name="Sex" value="1" checked>
+                  <div class="card-content"><span>👨</span> <span>Pria</span></div>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="Sex" value="0">
+                  <div class="card-content"><span>👩</span> <span>Wanita</span></div>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="input-label">Berat (kg)</label>
+                <input type="number" id="weight" class="text-input" placeholder="60" required min="30">
+              </div>
+              <div class="form-group">
+                <label class="input-label">Tinggi (cm)</label>
+                <input type="number" id="height" class="text-input" placeholder="170" required min="100">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="input-label">Usia Anda</label>
+              <select id="age" class="text-input select-input">
+                <option value="1">18 - 24 tahun</option>
+                <option value="3">25 - 34 tahun</option>
+                <option value="5">35 - 44 tahun</option>
+                <option value="7">45 - 54 tahun</option>
+                <option value="9">55 - 64 tahun</option>
+                <option value="11">65 tahun ke atas</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- STEP 2: INDIKATOR MEDIS -->
+          <div class="step-slide" id="slide-2">
+            <h3 class="slide-title">Riwayat Medis</h3>
+            
+            <div class="form-group">
+              <label class="input-label">Pernah didiagnosa Darah Tinggi?</label>
+              <div class="radio-group">
+                <label class="radio-card"><input type="radio" name="HighBP" value="0" checked><div class="card-content">Tidak</div></label>
+                <label class="radio-card warning"><input type="radio" name="HighBP" value="1"><div class="card-content">Ya</div></label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="input-label">Pernah didiagnosa Kolesterol Tinggi?</label>
+              <div class="radio-group">
+                <label class="radio-card"><input type="radio" name="HighChol" value="0" checked><div class="card-content">Tidak</div></label>
+                <label class="radio-card warning"><input type="radio" name="HighChol" value="1"><div class="card-content">Ya</div></label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="input-label">Riwayat Penyakit Jantung / Stroke?</label>
+              <div class="radio-group">
+                <label class="radio-card"><input type="radio" name="HeartAttackOrStroke" value="0" checked><div class="card-content">Tidak</div></label>
+                <label class="radio-card warning"><input type="radio" name="HeartAttackOrStroke" value="1"><div class="card-content">Ya</div></label>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3: KONDISI & GAYA HIDUP -->
+          <div class="step-slide" id="slide-3">
+            <h3 class="slide-title">Kondisi & Gaya Hidup</h3>
+            
+            <div class="form-group">
+              <label class="input-label">Apakah Anda kesulitan berjalan/naik tangga?</label>
+              <div class="radio-group">
+                <label class="radio-card"><input type="radio" name="DiffWalk" value="0" checked><div class="card-content">Tidak</div></label>
+                <label class="radio-card warning"><input type="radio" name="DiffWalk" value="1"><div class="card-content">Ya</div></label>
+              </div>
+            </div>
+
+             <div class="form-group">
+              <label class="input-label">Penilaian Kesehatan Umum</label>
+              <div class="radio-group vertical">
+                <label class="radio-list-item">
+                  <input type="radio" name="GenHlth" value="1" checked>
+                  <div class="list-content"><span class="emoji">💪</span> Sangat Sehat</div>
+                </label>
+                <label class="radio-list-item">
+                  <input type="radio" name="GenHlth" value="3">
+                  <div class="list-content"><span class="emoji">😐</span> Biasa Saja</div>
+                </label>
+                <label class="radio-list-item">
+                  <input type="radio" name="GenHlth" value="5">
+                  <div class="list-content"><span class="emoji">🤒</span> Sering Sakit</div>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-row">
+               <!-- Consolidated Yes/No questions to save space -->
+               <div class="form-group">
+                  <label class="input-label">Perokok Aktif?</label>
+                  <div class="radio-group small">
+                    <label class="radio-card"><input type="radio" name="Smoker" value="0" checked><div class="card-content">Tidak</div></label>
+                    <label class="radio-card warning"><input type="radio" name="Smoker" value="1"><div class="card-content">Ya</div></label>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="input-label">Rutin Olahraga?</label>
+                  <div class="radio-group small">
+                    <label class="radio-card warning"><input type="radio" name="PhysActivity" value="0"><div class="card-content">Tidak</div></label>
+                    <label class="radio-card"><input type="radio" name="PhysActivity" value="1" checked><div class="card-content">Ya</div></label>
+                  </div>
+               </div>
+            </div>
+          </div>
+
+          <!-- STEP 4: SOSIAL EKONOMI (RESTORED) -->
+          <div class="step-slide" id="slide-4">
+            <h3 class="slide-title">Profil Sosial</h3>
+            <p class="text-muted text-sm mb-4">Statistik menunjukkan faktor ini mempengaruhi akses kesehatan.</p>
+
+            <div class="form-group">
+              <label class="input-label">Pendidikan Terakhir</label>
+              <select id="education" class="text-input select-input">
+                <option value="6">Perguruan Tinggi (S1/D3)</option>
+                <option value="5">SMA / SMK / Sederajat</option>
+                <option value="4">SMP / Sederajat</option>
+                <option value="2">SD / Tidak Sekolah</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="input-label">Estimasi Pendapatan Bulanan</label>
+              <select id="income" class="text-input select-input">
+                <option value="8">Di atas Rp 10 Juta</option>
+                <option value="7">Rp 7 - 10 Juta</option>
+                <option value="6">Rp 5 - 7 Juta</option>
+                <option value="5">Rp 3 - 5 Juta</option>
+                <option value="4">Rp 2 - 3 Juta</option>
+                <option value="2">Di bawah Rp 2 Juta</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- RESULT SLIDE -->
+          <div class="step-slide text-center" id="slide-result">
+            <div class="result-box">
+              <div class="chart-ring" id="result-ring">
+                <span class="chart-value" id="res-score">0%</span>
+                <span class="chart-label">Risiko</span>
+              </div>
+              <h2 id="res-title">Analisis Selesai</h2>
+              <p id="res-desc" class="text-muted">Hasil kalkulasi...</p>
+              <button class="btn btn-primary btn-block mt-4" onclick="location.reload()">Cek Ulang</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="wizard-footer" id="wizard-footer">
+          <button type="button" class="btn btn-ghost" id="btn-back" onclick="changeStep(-1)" disabled>Kembali</button>
+          <button type="button" class="btn btn-primary" id="btn-next" onclick="changeStep(1)">Lanjut</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  
+  <footer class="text-center py-4 text-sm text-muted">
+    &copy; 2024 DiaCheck. Privasi Aman.
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
