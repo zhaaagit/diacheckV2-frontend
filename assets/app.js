@@ -1,5 +1,5 @@
 // Ganti dengan URL Render Anda
-const API_URL = "https://diacheckv2-backend.onrender.com";
+const API_URL = "https://pirpir-diacheckv2.hf.space";
 
 let currentStep = 1;
 const totalSteps = 4;
