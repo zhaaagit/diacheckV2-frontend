@@ -150,7 +150,6 @@ async function calculateRisk() {
     GenHlth: getRadio('GenHlth'),
     Education: getVal('education'),
     Income: getVal('income'),
-    Diet: getRadio('Diet'),
     NoDoc: getRadio('NoDoc')
   };
 
