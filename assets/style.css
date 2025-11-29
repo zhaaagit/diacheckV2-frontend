@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   background-color: var(--bg-body);
   color: var(--text-main);
   line-height: 1.6;
@@ -36,7 +36,7 @@ h2,
 h3,
 h4,
 .btn {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* --- LAYOUT UTILS --- */
@@ -282,7 +282,7 @@ h4,
 
 .section-desc {
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 24px;
 }
 
@@ -357,7 +357,7 @@ h4,
   background: #f8fafc;
 }
 
-.option-card input:checked+.option-content {
+.option-card input:checked + .option-content {
   border-color: var(--primary);
   background: var(--primary-light);
   color: var(--primary-dark);
@@ -400,6 +400,36 @@ select:focus {
   color: var(--text-muted);
   font-weight: 600;
 }
+
+/* BMI display */
+.bmi-box {
+  padding: 12px 14px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  font-weight: 700;
+  color: var(--text-main);
+  display: inline-block;
+}
+.bmi-box .bmi-value {
+  font-weight: 800;
+}
+.bmi-box .bmi-category {
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.bmi-underweight {
+  color: #2563eb;
+} /* blue */
+.bmi-normal {
+  color: var(--primary);
+} /* green/teal */
+.bmi-overweight {
+  color: var(--accent);
+} /* amber */
+.bmi-obese {
+  color: #ef4444;
+} /* red */
 
 .wizard-footer {
   padding: 20px 24px;
@@ -446,6 +476,46 @@ select:focus {
   padding: 20px 0;
 }
 
+/* Recommendations */
+.recommendation-box {
+  text-align: left;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(2, 6, 23, 0.04);
+}
+.recommendation-box h3 {
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  color: var(--text-main);
+}
+.rec-content .rec-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-muted);
+}
+.rec-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 12px;
+  margin-right: 8px;
+}
+.rec-tag.low {
+  background: #ecfdf5;
+  color: #065f46;
+}
+.rec-tag.medium {
+  background: #fff7ed;
+  color: #78350f;
+}
+.rec-tag.high {
+  background: #fff1f2;
+  color: #991b1b;
+}
+
 .result-ring {
   width: 160px;
   height: 160px;
@@ -466,7 +536,10 @@ select:focus {
   inset: -10px;
   border-radius: 50%;
   padding: 10px;
-  background: conic-gradient(var(--risk-color, #0d9488) var(--risk-deg, 0deg), #f3f4f6 0deg);
+  background: conic-gradient(
+    var(--risk-color, #0d9488) var(--risk-deg, 0deg),
+    #f3f4f6 0deg
+  );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;

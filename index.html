@@ -1,351 +1,553 @@
 <!DOCTYPE html>
 <html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DiaCheck Indonesia | Deteksi Dini Diabetes</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <title>DiaCheck Indonesia | Deteksi Dini Diabetes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap"
-    rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
 
-  <link rel="stylesheet" href="assets/style.css">
-</head>
-
-<body>
-
-  <nav class="navbar">
-    <div class="container nav-content">
-      <a href="#" class="logo">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path
-            d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-        </svg>
-        <span>DiaCheck</span>
-      </a>
-      <div class="nav-links">
-        <a href="#tool" class="btn-nav">Mulai Tes</a>
-      </div>
-    </div>
-  </nav>
-
-  <header class="hero" id="home">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <h1>Cek Risiko Kesehatan, <br><span>Sebelum Terlambat.</span></h1>
-        <p>Gunakan teknologi AI untuk mengetahui risiko diabetes Anda dalam waktu kurang dari 2 menit. Gratis, tanpa
-          login, dan privasi terjaga.</p>
-        <a href="#tool" class="hero-btn">Cek Risiko Sekarang &rarr;</a>
-      </div>
-
-      <div class="hero-image">
-        <svg class="illustration-svg" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="200" cy="150" r="130" fill="#CCFBF1" fill-opacity="0.5" />
-          <circle cx="280" cy="80" r="40" fill="#99F6E4" fill-opacity="0.5" />
-          <rect x="140" y="80" width="120" height="160" rx="60" fill="white" stroke="#0D9488" stroke-width="3" />
-          <circle cx="200" cy="130" r="30" fill="#E2E8F0" />
-          <path d="M170 170 Q200 200 230 170 V240 H170 V170 Z" fill="#0D9488" />
-          <rect x="240" y="100" width="120" height="140" rx="8" fill="white" stroke="#1F2937" stroke-width="2" />
-          <rect x="255" y="120" width="90" height="10" rx="4" fill="#E2E8F0" />
-          <rect x="255" y="140" width="70" height="10" rx="4" fill="#E2E8F0" />
-          <path d="M255 200 L280 180 L300 190 L330 160" stroke="#EF4444" stroke-width="3" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-      </div>
-    </div>
-  </header>
-
-  <section class="features">
-    <div class="container">
-      <div class="section-title">
-        <h2>Mengapa DiaCheck?</h2>
-        <p>Solusi modern untuk pemantauan kesehatan mandiri.</p>
-      </div>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="icon-box">⚡</div>
-          <h3>Hasil Instan</h3>
-          <p>Dapatkan estimasi risiko kesehatan Anda langsung setelah menjawab pertanyaan.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon-box">🔒</div>
-          <h3>100% Privat</h3>
-          <p>Kalkulasi dilakukan secara aman. Kami tidak menyimpan data pribadi Anda.</p>
-        </div>
-        <div class="feature-card">
-          <div class="icon-box">📊</div>
-          <h3>Berbasis Data</h3>
-          <p>Algoritma diadaptasi dari indikator kesehatan medis terpercaya.</p>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-content">
+        <a href="#" class="logo">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+            />
+          </svg>
+          <span>DiaCheck</span>
+        </a>
+        <div class="nav-links">
+          <a href="#tool" class="btn-nav">Mulai Tes</a>
         </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <section class="app-section" id="tool">
-    <div class="wizard-card">
-      <div class="wizard-header">
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <span class="step-text">Langkah <span id="step-num">1</span> dari 4</span>
-          <span style="font-size:12px; color:#999;">DiaCheck v2.1</span>
+    <header class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1>Cek Risiko Kesehatan, <br /><span>Sebelum Terlambat.</span></h1>
+          <p>
+            Gunakan teknologi AI untuk mengetahui risiko diabetes Anda dalam
+            waktu kurang dari 2 menit. Gratis, tanpa login, dan privasi terjaga.
+          </p>
+          <a href="#tool" class="hero-btn">Cek Risiko Sekarang &rarr;</a>
         </div>
-        <div class="progress-container">
-          <div class="progress-bar" id="progress-fill"></div>
+
+        <div class="hero-image">
+          <svg
+            class="illustration-svg"
+            viewBox="0 0 400 300"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="200"
+              cy="150"
+              r="130"
+              fill="#CCFBF1"
+              fill-opacity="0.5"
+            />
+            <circle cx="280" cy="80" r="40" fill="#99F6E4" fill-opacity="0.5" />
+            <rect
+              x="140"
+              y="80"
+              width="120"
+              height="160"
+              rx="60"
+              fill="white"
+              stroke="#0D9488"
+              stroke-width="3"
+            />
+            <circle cx="200" cy="130" r="30" fill="#E2E8F0" />
+            <path
+              d="M170 170 Q200 200 230 170 V240 H170 V170 Z"
+              fill="#0D9488"
+            />
+            <rect
+              x="240"
+              y="100"
+              width="120"
+              height="140"
+              rx="8"
+              fill="white"
+              stroke="#1F2937"
+              stroke-width="2"
+            />
+            <rect
+              x="255"
+              y="120"
+              width="90"
+              height="10"
+              rx="4"
+              fill="#E2E8F0"
+            />
+            <rect
+              x="255"
+              y="140"
+              width="70"
+              height="10"
+              rx="4"
+              fill="#E2E8F0"
+            />
+            <path
+              d="M255 200 L280 180 L300 190 L330 160"
+              stroke="#EF4444"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </div>
       </div>
+    </header>
 
-      <form id="health-form" onsubmit="return false;">
-        <div class="wizard-body">
+    <section class="features">
+      <div class="container">
+        <div class="section-title">
+          <h2>Mengapa DiaCheck?</h2>
+          <p>Solusi modern untuk pemantauan kesehatan mandiri.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="icon-box">⚡</div>
+            <h3>Hasil Instan</h3>
+            <p>
+              Dapatkan estimasi risiko kesehatan Anda langsung setelah menjawab
+              pertanyaan.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="icon-box">🔒</div>
+            <h3>100% Privat</h3>
+            <p>
+              Kalkulasi dilakukan secara aman. Kami tidak menyimpan data pribadi
+              Anda.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="icon-box">📊</div>
+            <h3>Berbasis Data</h3>
+            <p>
+              Algoritma diadaptasi dari indikator kesehatan medis terpercaya.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="step-slide active" id="slide-1">
-            <h3>Profil Dasar</h3>
-            <p class="section-desc">Data fisik dasar untuk perhitungan metabolisme.</p>
+    <section class="app-section" id="tool">
+      <div class="wizard-card">
+        <div class="wizard-header">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <span class="step-text"
+              >Langkah <span id="step-num">1</span> dari 4</span
+            >
+            <span style="font-size: 12px; color: #999">DiaCheck v2.1</span>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar" id="progress-fill"></div>
+          </div>
+        </div>
 
-            <div class="form-group">
-              <label class="form-label">Jenis Kelamin</label>
-              <div class="grid-options">
-                <label class="option-card">
-                  <input type="radio" name="Sex" value="1">
-                  <div class="option-content"><span>👨</span> Pria</div>
-                </label>
-                <label class="option-card">
-                  <input type="radio" name="Sex" value="0">
-                  <div class="option-content"><span>👩</span> Wanita</div>
-                </label>
-              </div>
-            </div>
+        <form id="health-form" onsubmit="return false;">
+          <div class="wizard-body">
+            <div class="step-slide active" id="slide-1">
+              <h3>Profil Dasar</h3>
+              <p class="section-desc">
+                Data fisik dasar untuk perhitungan metabolisme.
+              </p>
 
-            <div class="grid-options">
               <div class="form-group">
-                <label class="form-label">Berat Badan</label>
-                <div class="input-wrapper">
-                  <input type="number" id="weight" placeholder="60" required min="30" max="150">
-                  <span class="suffix">kg</span>
+                <label class="form-label">Jenis Kelamin</label>
+                <div class="grid-options">
+                  <label class="option-card">
+                    <input type="radio" name="Sex" value="1" />
+                    <div class="option-content"><span>👨</span> Pria</div>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="Sex" value="0" />
+                    <div class="option-content"><span>👩</span> Wanita</div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="grid-options">
+                <div class="form-group">
+                  <label class="form-label">Berat Badan</label>
+                  <div class="input-wrapper">
+                    <input
+                      type="number"
+                      id="weight"
+                      placeholder="60"
+                      required
+                      min="30"
+                      max="150"
+                    />
+                    <span class="suffix">kg</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Tinggi Badan</label>
+                  <div class="input-wrapper">
+                    <input
+                      type="number"
+                      id="height"
+                      placeholder="170"
+                      required
+                      min="100"
+                      max="300"
+                    />
+                    <span class="suffix">cm</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group" id="bmi-container">
+                <label class="form-label">Indeks Massa Tubuh (IMT)</label>
+                <div id="bmi-display" class="bmi-box">
+                  IMT: — (<span class="bmi-category">—</span>)
                 </div>
               </div>
               <div class="form-group">
-                <label class="form-label">Tinggi Badan</label>
-                <div class="input-wrapper">
-                  <input type="number" id="height" placeholder="170" required min="100" max="300">
-                  <span class="suffix">cm</span>
+                <label class="form-label">Kelompok Usia</label>
+                <select class="input-wrapper" id="age" style="width: 100%">
+                  <option value="" disabled selected>Pilih Usia Anda...</option>
+                  <option value="1">18 - 24 tahun</option>
+                  <option value="3">25 - 34 tahun</option>
+                  <option value="5">35 - 44 tahun</option>
+                  <option value="7">45 - 54 tahun</option>
+                  <option value="9">55 - 64 tahun</option>
+                  <option value="11">65 tahun ke atas</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="step-slide" id="slide-2">
+              <h3>Riwayat Medis</h3>
+              <p class="section-desc">
+                Kondisi yang pernah didiagnosa dokter sebelumnya.
+              </p>
+
+              <div class="form-group">
+                <label class="form-label"
+                  >Apakah Anda memiliki Tekanan Darah Tinggi?</label
+                >
+                <div class="grid-options">
+                  <label class="option-card"
+                    ><input type="radio" name="HighBP" value="0" />
+                    <div class="option-content">Tidak</div>
+                  </label>
+                  <label class="option-card"
+                    ><input type="radio" name="HighBP" value="1" />
+                    <div class="option-content">Ya</div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label"
+                  >Apakah Anda memiliki Kolesterol Tinggi?</label
+                >
+                <div class="grid-options">
+                  <label class="option-card"
+                    ><input type="radio" name="HighChol" value="0" />
+                    <div class="option-content">Tidak</div>
+                  </label>
+                  <label class="option-card"
+                    ><input type="radio" name="HighChol" value="1" />
+                    <div class="option-content">Ya</div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label"
+                  >Riwayat Serangan Jantung / Stroke?</label
+                >
+                <div class="grid-options">
+                  <label class="option-card"
+                    ><input type="radio" name="HeartAttackOrStroke" value="0" />
+                    <div class="option-content">Tidak</div>
+                  </label>
+                  <label class="option-card"
+                    ><input type="radio" name="HeartAttackOrStroke" value="1" />
+                    <div class="option-content">Ya</div>
+                  </label>
                 </div>
               </div>
             </div>
 
-            <div class="form-group">
-              <label class="form-label">Kelompok Usia</label>
-              <select class="input-wrapper" id="age" style="width:100%;">
-                <option value="" disabled selected>Pilih Usia Anda...</option>
-                <option value="1">18 - 24 tahun</option>
-                <option value="3">25 - 34 tahun</option>
-                <option value="5">35 - 44 tahun</option>
-                <option value="7">45 - 54 tahun</option>
-                <option value="9">55 - 64 tahun</option>
-                <option value="11">65 tahun ke atas</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="step-slide" id="slide-2">
-            <h3>Riwayat Medis</h3>
-            <p class="section-desc">Kondisi yang pernah didiagnosa dokter sebelumnya.</p>
-
-            <div class="form-group">
-              <label class="form-label">Apakah Anda memiliki Tekanan Darah Tinggi?</label>
-              <div class="grid-options">
-                <label class="option-card"><input type="radio" name="HighBP" value="0">
-                  <div class="option-content">Tidak</div>
-                </label>
-                <label class="option-card"><input type="radio" name="HighBP" value="1">
-                  <div class="option-content">Ya</div>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Apakah Anda memiliki Kolesterol Tinggi?</label>
-              <div class="grid-options">
-                <label class="option-card"><input type="radio" name="HighChol" value="0">
-                  <div class="option-content">Tidak</div>
-                </label>
-                <label class="option-card"><input type="radio" name="HighChol" value="1">
-                  <div class="option-content">Ya</div>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Riwayat Serangan Jantung / Stroke?</label>
-              <div class="grid-options">
-                <label class="option-card"><input type="radio" name="HeartAttackOrStroke" value="0">
-                  <div class="option-content">Tidak</div>
-                </label>
-                <label class="option-card"><input type="radio" name="HeartAttackOrStroke" value="1">
-                  <div class="option-content">Ya</div>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <div class="step-slide" id="slide-3">
-            <h3>Gaya Hidup & Kondisi</h3>
-            <p class="section-desc">Kebiasaan sehari-hari mempengaruhi risiko jangka panjang.</p>
-
-            <div class="form-group">
-              <label class="form-label">Apakah Anda kesulitan berjalan / naik tangga?</label>
-              <div class="grid-options">
-                <label class="option-card"><input type="radio" name="DiffWalk" value="0">
-                  <div class="option-content">❌ Tidak</div>
-                </label>
-                <label class="option-card"><input type="radio" name="DiffWalk" value="1">
-                  <div class="option-content">🚶 Sulit</div>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Apakah Anda Merokok?</label>
-              <div class="grid-options">
-                <label class="option-card"><input type="radio" name="Smoker" value="0">
-                  <div class="option-content">Tidak</div>
-                </label>
-                <label class="option-card"><input type="radio" name="Smoker" value="1">
-                  <div class="option-content">Ya</div>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Apakah Anda rutin berolahraga (min. 30 menit/hari)?</label>
-              <div class="grid-options">
-                <label class="option-card"><input type="radio" name="PhysActivity" value="0">
-                  <div class="option-content">Jarang</div>
-                </label>
-                <label class="option-card"><input type="radio" name="PhysActivity" value="1">
-                  <div class="option-content">Ya, Rutin</div>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Bagaimana Anda menilai kesehatan Anda secara umum?</label>
-              <p style="color:var(--text-muted); font-size:12px; margin:6px 0 10px;">
-                Skala sederhana: <strong>Sehat/Fit</strong> = jarang ada keluhan, aktif beraktivitas; 
-                <strong>Biasa</strong> = sesekali ada keluhan ringan; 
-                <strong>Sering Sakit</strong> = sering merasa kurang sehat atau ada keluhan berulang.
-              </p>
-              <div class="grid-options full">
-                <label class="option-card">
-                  <input type="radio" name="GenHlth" value="1">
-                  <div class="option-content" style="justify-content: space-between;" title="Sehat/Fit: jarang ada keluhan, bertenaga, aktif berolahraga & beraktivitas harian.">
-                    <span>Sangat Sehat / Fit</span> <span>🤩</span>
-                  </div>
-                </label>
-                <label class="option-card">
-                  <input type="radio" name="GenHlth" value="3">
-                  <div class="option-content" style="justify-content: space-between;" title="Biasa: sesekali ada keluhan ringan (mis. mudah lelah, pusing ringan), namun aktivitas harian umumnya lancar.">
-                    <span>Biasa Saja</span> <span>😐</span>
-                  </div>
-                </label>
-                <label class="option-card">
-                  <input type="radio" name="GenHlth" value="5">
-                  <div class="option-content" style="justify-content: space-between;" title="Sering Sakit/Lemah: sering merasa kurang sehat, ada keluhan berulang yang mengganggu aktivitas harian.">
-                    <span>Sering Sakit / Lemah</span> <span>🤒</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <div class="step-slide" id="slide-4">
-            <h3>Faktor Sosial</h3>
-            <p class="section-desc">Faktor lingkungan mempengaruhi akses kesehatan.</p>
-
-            <div class="form-group">
-              <label class="form-label">Pendidikan Terakhir</label>
-              <select class="input-wrapper" id="education" style="width:100%;">
-                <option value="" disabled selected>Pilih Pendidikan...</option>
-                <option value="6">Perguruan Tinggi (S1/D3)</option>
-                <option value="5">SMA / SMK</option>
-                <option value="4">SMP</option>
-                <option value="2">SD / Tidak Sekolah</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Estimasi Pendapatan Bulanan</label>
-              <select class="input-wrapper" id="income" style="width:100%;">
-                <option value="" disabled selected>Pilih Pendapatan...</option>
-                <option value="8">Di atas Rp 10 Juta</option>
-                <option value="7">Rp 7 - 10 Juta</option>
-                <option value="6">Rp 5 - 7 Juta</option>
-                <option value="5">Rp 3 - 5 Juta</option>
-                <option value="4">Rp 2 - 3 Juta</option>
-                <option value="2">Di bawah Rp 2 Juta</option>
-              </select>
-            </div>
-
-            <div class="form-group" style="margin-top:20px;">
-              <label class="form-label">Pernah batal ke dokter karena kendala biaya?</label>
-              <div class="grid-options">
-                <label class="option-card">
-                  <input type="radio" name="NoDoc" value="0">
-                  <div class="option-content">❌ Tidak</div>
-                </label>
-                <label class="option-card">
-                  <input type="radio" name="NoDoc" value="1">
-                  <div class="option-content">💰 Ya</div>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <div class="step-slide" id="slide-result">
-            <div class="result-view">
-              <div class="result-ring" id="result-ring">
-                <div class="score-big" id="res-score">0%</div>
-                <div class="score-label">Probabilitas</div>
-              </div>
-              <h2 id="res-title" style="margin-bottom:12px;">Menganalisis...</h2>
-              <p id="res-desc" style="color:var(--text-muted); font-size:15px; line-height:1.6;">
-                Mohon tunggu sebentar, Server sedang menghitung risiko Anda.
+            <div class="step-slide" id="slide-3">
+              <h3>Gaya Hidup & Kondisi</h3>
+              <p class="section-desc">
+                Kebiasaan sehari-hari mempengaruhi risiko jangka panjang.
               </p>
 
-              <button class="hero-btn" onclick="location.reload()"
-                style="margin-top:20px; border:none; cursor:pointer;">Cek Ulang</button>
+              <div class="form-group">
+                <label class="form-label"
+                  >Apakah Anda kesulitan berjalan / naik tangga?</label
+                >
+                <div class="grid-options">
+                  <label class="option-card"
+                    ><input type="radio" name="DiffWalk" value="0" />
+                    <div class="option-content">❌ Tidak</div>
+                  </label>
+                  <label class="option-card"
+                    ><input type="radio" name="DiffWalk" value="1" />
+                    <div class="option-content">🚶 Sulit</div>
+                  </label>
+                </div>
+              </div>
 
-              <div style="margin-top:16px; border-top:1px solid #e5e7eb; padding-top:12px;">
-                <p style="color:#6b7280; font-size:12px; line-height:1.5;">
-                  Disclaimer: Prediksi ini menggunakan model machine learning dan
-                  bertujuan sebagai alat edukasi/screening awal. Hasil tidak
-                  menggantikan diagnosis medis. Untuk keluhan atau gejala, konsultasikan
-                  langsung dengan tenaga kesehatan profesional.
+              <div class="form-group">
+                <label class="form-label">Apakah Anda Merokok?</label>
+                <div class="grid-options">
+                  <label class="option-card"
+                    ><input type="radio" name="Smoker" value="0" />
+                    <div class="option-content">Tidak</div>
+                  </label>
+                  <label class="option-card"
+                    ><input type="radio" name="Smoker" value="1" />
+                    <div class="option-content">Ya</div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label"
+                  >Apakah Anda rutin berolahraga (min. 30 menit/hari)?</label
+                >
+                <div class="grid-options">
+                  <label class="option-card"
+                    ><input type="radio" name="PhysActivity" value="0" />
+                    <div class="option-content">Jarang</div>
+                  </label>
+                  <label class="option-card"
+                    ><input type="radio" name="PhysActivity" value="1" />
+                    <div class="option-content">Ya, Rutin</div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label"
+                  >Bagaimana Anda menilai kesehatan Anda secara umum?</label
+                >
+                <p
+                  style="
+                    color: var(--text-muted);
+                    font-size: 12px;
+                    margin: 6px 0 10px;
+                  "
+                >
+                  Skala sederhana: <strong>Sehat/Fit</strong> = jarang ada
+                  keluhan, aktif beraktivitas; <strong>Biasa</strong> = sesekali
+                  ada keluhan ringan; <strong>Sering Sakit</strong> = sering
+                  merasa kurang sehat atau ada keluhan berulang.
                 </p>
+                <div class="grid-options full">
+                  <label class="option-card">
+                    <input type="radio" name="GenHlth" value="1" />
+                    <div
+                      class="option-content"
+                      style="justify-content: space-between"
+                      title="Sehat/Fit: jarang ada keluhan, bertenaga, aktif berolahraga & beraktivitas harian."
+                    >
+                      <span>Sangat Sehat / Fit</span> <span>🤩</span>
+                    </div>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="GenHlth" value="3" />
+                    <div
+                      class="option-content"
+                      style="justify-content: space-between"
+                      title="Biasa: sesekali ada keluhan ringan (mis. mudah lelah, pusing ringan), namun aktivitas harian umumnya lancar."
+                    >
+                      <span>Biasa Saja</span> <span>😐</span>
+                    </div>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="GenHlth" value="5" />
+                    <div
+                      class="option-content"
+                      style="justify-content: space-between"
+                      title="Sering Sakit/Lemah: sering merasa kurang sehat, ada keluhan berulang yang mengganggu aktivitas harian."
+                    >
+                      <span>Sering Sakit / Lemah</span> <span>🤒</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-slide" id="slide-4">
+              <h3>Faktor Sosial</h3>
+              <p class="section-desc">
+                Faktor lingkungan mempengaruhi akses kesehatan.
+              </p>
+
+              <div class="form-group">
+                <label class="form-label">Pendidikan Terakhir</label>
+                <select
+                  class="input-wrapper"
+                  id="education"
+                  style="width: 100%"
+                >
+                  <option value="" disabled selected>
+                    Pilih Pendidikan...
+                  </option>
+                  <option value="6">Perguruan Tinggi (S1/D3)</option>
+                  <option value="5">SMA / SMK</option>
+                  <option value="4">SMP</option>
+                  <option value="2">SD / Tidak Sekolah</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Estimasi Pendapatan Bulanan</label>
+                <select class="input-wrapper" id="income" style="width: 100%">
+                  <option value="" disabled selected>
+                    Pilih Pendapatan...
+                  </option>
+                  <option value="8">Di atas Rp 10 Juta</option>
+                  <option value="7">Rp 7 - 10 Juta</option>
+                  <option value="6">Rp 5 - 7 Juta</option>
+                  <option value="5">Rp 3 - 5 Juta</option>
+                  <option value="4">Rp 2 - 3 Juta</option>
+                  <option value="2">Di bawah Rp 2 Juta</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="margin-top: 20px">
+                <label class="form-label"
+                  >Pernah batal ke dokter karena kendala biaya?</label
+                >
+                <div class="grid-options">
+                  <label class="option-card">
+                    <input type="radio" name="NoDoc" value="0" />
+                    <div class="option-content">❌ Tidak</div>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="NoDoc" value="1" />
+                    <div class="option-content">💰 Ya</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-slide" id="slide-result">
+              <div class="result-view">
+                <div class="result-ring" id="result-ring">
+                  <div class="score-big" id="res-score">0%</div>
+                  <div class="score-label">Probabilitas</div>
+                </div>
+                <h2 id="res-title" style="margin-bottom: 12px">
+                  Menganalisis...
+                </h2>
+                <p
+                  id="res-desc"
+                  style="
+                    color: var(--text-muted);
+                    font-size: 15px;
+                    line-height: 1.6;
+                  "
+                >
+                  Mohon tunggu sebentar, Server sedang menghitung risiko Anda.
+                </p>
+
+                <button
+                  class="hero-btn"
+                  onclick="location.reload()"
+                  style="margin-top: 20px; border: none; cursor: pointer"
+                >
+                  Cek Ulang
+                </button>
+
+                <div
+                  id="recommendations"
+                  class="recommendation-box"
+                  aria-live="polite"
+                  style="margin-top: 16px"
+                >
+                  <h3 style="margin-bottom: 8px">Rekomendasi Aktivitas</h3>
+                  <div id="rec-content" class="rec-content">—</div>
+                </div>
+
+                <div
+                  style="
+                    margin-top: 16px;
+                    border-top: 1px solid #e5e7eb;
+                    padding-top: 12px;
+                  "
+                >
+                  <p style="color: #6b7280; font-size: 12px; line-height: 1.5">
+                    Disclaimer: Prediksi ini menggunakan model machine learning
+                    dan bertujuan sebagai alat edukasi/screening awal. Hasil
+                    tidak menggantikan diagnosis medis. Untuk keluhan atau
+                    gejala, konsultasikan langsung dengan tenaga kesehatan
+                    profesional.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+          <div class="wizard-footer" id="wizard-footer">
+            <button
+              type="button"
+              class="btn-action btn-back"
+              id="btn-back"
+              onclick="changeStep(-1)"
+              disabled
+            >
+              Kembali
+            </button>
+            <button
+              type="button"
+              class="btn-action btn-next"
+              id="btn-next"
+              onclick="changeStep(1)"
+            >
+              Lanjut &rarr;
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
 
-        </div>
-        <div class="wizard-footer" id="wizard-footer">
-          <button type="button" class="btn-action btn-back" id="btn-back" onclick="changeStep(-1)"
-            disabled>Kembali</button>
-          <button type="button" class="btn-action btn-next" id="btn-next" onclick="changeStep(1)">Lanjut &rarr;</button>
-        </div>
-      </form>
-    </div>
-  </section>
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2025 DiaCheck Indonesia.</p>
+      </div>
+    </footer>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025 DiaCheck Indonesia.</p>
-    </div>
-  </footer>
-
-  <script src="assets/app.js"></script>
-
-</body>
-
+    <script src="assets/app.js"></script>
+  </body>
 </html>
