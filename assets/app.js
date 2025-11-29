@@ -178,13 +178,23 @@ async function calculateRisk() {
     console.log('Response from /predict:', result);
     if (result.error) throw new Error(result.error);
 
-    // If backend returns 0-1 scale, multiply by 100; if already 0-100, leave as-is
+    // Normalize to 0-100
     let percent = result.risk_score;
     if (typeof percent === 'number' && percent <= 1) {
-      percent = Math.round(percent * 100);
-    } else {
-      percent = Math.round(percent);
+      percent = percent * 100;
     }
+    // Display mapping: keep low-mid ranges similar, add more separation above 70
+    // This is UI-only; model output remains unchanged server-side.
+    const p = Math.max(0, Math.min(100, percent));
+    let mapped = p;
+    if (p < 30) {
+      mapped = p * 0.9; // slightly conservative below 30
+    } else if (p < 70) {
+      mapped = p; // keep mid-range as-is
+    } else {
+      mapped = 70 + (p - 70) * 1.5; // stretch high-end for clearer differentiation
+    }
+    mapped = Math.min(99, Math.round(mapped));
     const ring = document.getElementById('result-ring');
 
     // Animate the number counting up
@@ -197,13 +207,13 @@ async function calculateRisk() {
       const progress = Math.min(elapsed / duration, 1);
 
       // Ease out logic
-      const currentVal = Math.floor(progress * percent);
+      const currentVal = Math.floor(progress * mapped);
       scoreDisplay.innerText = currentVal + '%';
 
       if (progress < 1) {
         requestAnimationFrame(animateScore);
       } else {
-        finalizeResult(percent, ring, title, desc);
+        finalizeResult(mapped, ring, title, desc);
       }
     }
     requestAnimationFrame(animateScore);
@@ -221,12 +231,13 @@ function finalizeResult(percent, ring, title, desc) {
   let riskLabel = "Risiko Rendah";
   let riskDesc = "Profil kesehatan Anda baik. Pertahankan pola hidup sehat!";
 
-  if (percent > 40) {
+  // Adjusted bands to align with mapped display
+  if (percent >= 35) {
     color = '#f59e0b'; // Amber
     riskLabel = "Risiko Sedang";
     riskDesc = "Terdeteksi beberapa faktor risiko. Mulailah perbaiki pola makan dan olahraga.";
   }
-  if (percent > 70) {
+  if (percent >= 65) {
     color = '#ef4444'; // Red
     riskLabel = "Risiko Tinggi";
     riskDesc = "Disarankan untuk melakukan pemeriksaan gula darah ke dokter.";
