@@ -114,10 +114,19 @@ function changeStep(dir) {
 }
 
 async function calculateRisk() {
-  const getVal = (id) => document.getElementById(id)?.value || 0;
+  // Get numeric value from inputs; return null if empty
+  const getVal = (id) => {
+    const v = document.getElementById(id)?.value;
+    if (v === undefined || v === null || v === "") return null;
+    const num = Number(v);
+    return Number.isFinite(num) ? num : null;
+  };
+  // Get numeric value from radios; return null if not selected
   const getRadio = (name) => {
     const el = document.querySelector(`input[name="${name}"]:checked`);
-    return el ? el.value : 0;
+    if (!el) return null;
+    const num = Number(el.value);
+    return Number.isFinite(num) ? num : null;
   };
 
   const title = document.getElementById('res-title');
@@ -141,9 +150,23 @@ async function calculateRisk() {
     GenHlth: getRadio('GenHlth'),
     Education: getVal('education'),
     Income: getVal('income'),
-    Diet: getRadio('Diet') || 1,
-    NoDoc: getRadio('NoDoc') || 0
+    Diet: getRadio('Diet'),
+    NoDoc: getRadio('NoDoc')
   };
+
+  // Guard: if any required field is null, show error and stop
+  const missingKeys = Object.entries(payload)
+    .filter(([_, v]) => v === null)
+    .map(([k]) => k);
+  if (missingKeys.length) {
+    title.innerText = "Data belum lengkap";
+    title.style.color = '#f59e0b';
+    desc.innerText = `Lengkapi: ${missingKeys.join(', ')}`;
+    return;
+  }
+
+  // Optional debug: inspect payload being sent
+  console.log('Payload to /predict:', payload);
 
   try {
     const response = await fetch(`${API_URL}/predict`, {
@@ -153,9 +176,16 @@ async function calculateRisk() {
     });
 
     const result = await response.json();
+    console.log('Response from /predict:', result);
     if (result.error) throw new Error(result.error);
 
-    const percent = Math.round(result.risk_score * 100);
+    // If backend returns 0-1 scale, multiply by 100; if already 0-100, leave as-is
+    let percent = result.risk_score;
+    if (typeof percent === 'number' && percent <= 1) {
+      percent = Math.round(percent * 100);
+    } else {
+      percent = Math.round(percent);
+    }
     const ring = document.getElementById('result-ring');
 
     // Animate the number counting up
