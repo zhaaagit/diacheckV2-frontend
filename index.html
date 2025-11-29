@@ -232,22 +232,27 @@
 
             <div class="form-group">
               <label class="form-label">Bagaimana Anda menilai kesehatan Anda secara umum?</label>
+              <p style="color:var(--text-muted); font-size:12px; margin:6px 0 10px;">
+                Skala sederhana: <strong>Sehat/Fit</strong> = jarang ada keluhan, aktif beraktivitas; 
+                <strong>Biasa</strong> = sesekali ada keluhan ringan; 
+                <strong>Sering Sakit</strong> = sering merasa kurang sehat atau ada keluhan berulang.
+              </p>
               <div class="grid-options full">
                 <label class="option-card">
                   <input type="radio" name="GenHlth" value="1">
-                  <div class="option-content" style="justify-content: space-between;">
+                  <div class="option-content" style="justify-content: space-between;" title="Sehat/Fit: jarang ada keluhan, bertenaga, aktif berolahraga & beraktivitas harian.">
                     <span>Sangat Sehat / Fit</span> <span>🤩</span>
                   </div>
                 </label>
                 <label class="option-card">
                   <input type="radio" name="GenHlth" value="3">
-                  <div class="option-content" style="justify-content: space-between;">
+                  <div class="option-content" style="justify-content: space-between;" title="Biasa: sesekali ada keluhan ringan (mis. mudah lelah, pusing ringan), namun aktivitas harian umumnya lancar.">
                     <span>Biasa Saja</span> <span>😐</span>
                   </div>
                 </label>
                 <label class="option-card">
                   <input type="radio" name="GenHlth" value="5">
-                  <div class="option-content" style="justify-content: space-between;">
+                  <div class="option-content" style="justify-content: space-between;" title="Sering Sakit/Lemah: sering merasa kurang sehat, ada keluhan berulang yang mengganggu aktivitas harian.">
                     <span>Sering Sakit / Lemah</span> <span>🤒</span>
                   </div>
                 </label>
@@ -306,11 +311,20 @@
               </div>
               <h2 id="res-title" style="margin-bottom:12px;">Menganalisis...</h2>
               <p id="res-desc" style="color:var(--text-muted); font-size:15px; line-height:1.6;">
-                Mohon tunggu sebentar, AI sedang menghitung risiko Anda.
+                Mohon tunggu sebentar, Server sedang menghitung risiko Anda.
               </p>
 
               <button class="hero-btn" onclick="location.reload()"
                 style="margin-top:20px; border:none; cursor:pointer;">Cek Ulang</button>
+
+              <div style="margin-top:16px; border-top:1px solid #e5e7eb; padding-top:12px;">
+                <p style="color:#6b7280; font-size:12px; line-height:1.5;">
+                  Disclaimer: Prediksi ini menggunakan model machine learning dan
+                  bertujuan sebagai alat edukasi/screening awal. Hasil tidak
+                  menggantikan diagnosis medis. Untuk keluhan atau gejala, konsultasikan
+                  langsung dengan tenaga kesehatan profesional.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -326,7 +340,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2024 DiaCheck Indonesia.</p>
+      <p>&copy; 2025 DiaCheck Indonesia.</p>
     </div>
   </footer>
 

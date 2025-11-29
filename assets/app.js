@@ -246,22 +246,25 @@ function finalizeResult(percent, ring, title, desc) {
   let color = '#10b981'; // Green
   let riskLabel = "Risiko Rendah";
   let riskDesc = "Profil kesehatan Anda baik. Pertahankan pola hidup sehat!";
+  let extraNote = '';
 
   // Adjusted bands to align with mapped display
   if (percent >= 35) {
     color = '#f59e0b'; // Amber
     riskLabel = "Risiko Sedang";
     riskDesc = "Terdeteksi beberapa faktor risiko. Mulailah perbaiki pola makan dan olahraga.";
+    extraNote = "Pertimbangkan konsultasi: Jika ada keluhan (sering haus/lapar, sering buang air kecil, mudah lelah, luka sulit sembuh), coba bicarakan dengan tenaga kesehatan.";
   }
   if (percent >= 65) {
     color = '#ef4444'; // Red
     riskLabel = "Risiko Tinggi";
     riskDesc = "Disarankan untuk melakukan pemeriksaan gula darah ke dokter.";
+    extraNote = '';
   }
 
   ring.style.setProperty('--risk-color', color);
   ring.style.setProperty('--risk-deg', (percent * 3.6) + 'deg');
   title.innerText = riskLabel;
   title.style.color = color;
-  desc.innerText = riskDesc;
+  desc.innerText = riskDesc + (extraNote ? "\n\n" + extraNote : "");
 }
