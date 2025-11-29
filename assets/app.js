@@ -17,6 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+    // Enforce weight/height max constraints in JS for safety
+    const w = document.getElementById('weight');
+    const h = document.getElementById('height');
+    if (w) w.addEventListener('input', () => {
+      if (w.value !== '' && Number(w.value) > 150) {
+        w.value = '150';
+        w.style.borderColor = '#f59e0b';
+      }
+    });
+    if (h) h.addEventListener('input', () => {
+      if (h.value !== '' && Number(h.value) > 300) {
+        h.value = '300';
+        h.style.borderColor = '#f59e0b';
+      }
+    });
 });
 
 window.changeStep = changeStep;
