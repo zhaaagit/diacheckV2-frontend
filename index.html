@@ -21,19 +21,37 @@
   <body>
     <nav class="navbar">
       <div class="container nav-content">
-        <a href="#" class="logo">
+        <a href="#home" class="logo">
           <svg
+            class="logo-icon"
             width="28"
             height="28"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            viewBox="0 0 32 32"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-label="Logo DiaCheck: lingkaran biru dengan tetesan darah"
+            role="img"
           >
+            <!-- Blue circle (diabetes symbol) -->
+            <circle
+              cx="16"
+              cy="16"
+              r="12"
+              fill="none"
+              stroke="#0072CE"
+              stroke-width="3"
+            />
+            <!-- Blood drop in the center -->
             <path
-              d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+              d="M16 8 C16 8 21 15 21 18.5 C21 21.5 18.8 23.5 16 23.5 C13.2 23.5 11 21.5 11 18.5 C11 15 16 8 16 8 Z"
+              fill="#EF4444"
+            />
+            <!-- Small highlight on the drop -->
+            <path
+              d="M18.5 12.3 C19.5 13.8 18.4 15 17.3 15.2"
+              fill="none"
+              stroke="#F87171"
+              stroke-width="1.4"
+              stroke-linecap="round"
             />
           </svg>
           <span>DiaCheck</span>
@@ -47,7 +65,7 @@
     <header class="hero" id="home">
       <div class="container hero-grid">
         <div class="hero-content">
-          <h1>Cek Risiko Kesehatan, <br /><span>Sebelum Terlambat.</span></h1>
+          <h1>Cek Risiko Diabetes, <br /><span>Sebelum Terlambat.</span></h1>
           <p>
             Gunakan teknologi AI untuk mengetahui risiko diabetes Anda dalam
             waktu kurang dari 2 menit. Gratis, tanpa login, dan privasi terjaga.
@@ -55,68 +73,26 @@
           <a href="#tool" class="hero-btn">Cek Risiko Sekarang &rarr;</a>
         </div>
 
-        <div class="hero-image">
+        <div class="hero-image" aria-hidden="true">
           <svg
             class="illustration-svg"
-            viewBox="0 0 400 300"
-            fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 200 200"
+            role="img"
+            aria-label="Logo DiaCheck: lingkaran biru dan tetesan darah"
           >
-            <circle
-              cx="200"
-              cy="150"
-              r="130"
-              fill="#CCFBF1"
-              fill-opacity="0.5"
-            />
-            <circle cx="280" cy="80" r="40" fill="#99F6E4" fill-opacity="0.5" />
-            <rect
-              x="140"
-              y="80"
-              width="120"
-              height="160"
-              rx="60"
-              fill="white"
-              stroke="#0D9488"
-              stroke-width="3"
-            />
-            <circle cx="200" cy="130" r="30" fill="#E2E8F0" />
+            <defs>
+              <linearGradient id="lighterMatteRed" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#f5a2a2;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#eb2f2f;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#00AEEF" stroke-width="15" />
+
             <path
-              d="M170 170 Q200 200 230 170 V240 H170 V170 Z"
-              fill="#0D9488"
-            />
-            <rect
-              x="240"
-              y="100"
-              width="120"
-              height="140"
-              rx="8"
-              fill="white"
-              stroke="#1F2937"
-              stroke-width="2"
-            />
-            <rect
-              x="255"
-              y="120"
-              width="90"
-              height="10"
-              rx="4"
-              fill="#E2E8F0"
-            />
-            <rect
-              x="255"
-              y="140"
-              width="70"
-              height="10"
-              rx="4"
-              fill="#E2E8F0"
-            />
-            <path
-              d="M255 200 L280 180 L300 190 L330 160"
-              stroke="#EF4444"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              d="M100 50 C 85 75, 70 100, 70 120 A 30 30 0 0 0 130 120 C 130 100, 115 75, 100 50 Z"
+              fill="url(#lighterMatteRed)"
             />
           </svg>
         </div>

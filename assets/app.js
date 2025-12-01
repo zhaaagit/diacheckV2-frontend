@@ -315,13 +315,13 @@ function finalizeResult(percent, ring, title, desc) {
     riskDesc =
       "Terdeteksi beberapa faktor risiko. Mulailah perbaiki pola makan dan olahraga.";
     extraNote =
-      "Pertimbangkan konsultasi: Jika ada keluhan (sering haus/lapar, sering buang air kecil, mudah lelah, luka sulit sembuh), coba bicarakan dengan tenaga kesehatan.";
+      "Jika ada keluhan (sering haus/lapar, sering buang air kecil, mudah lelah, luka sulit sembuh), coba bicarakan dengan tenaga kesehatan.";
   }
   if (percent >= 65) {
     color = "#ef4444"; // Red
     riskLabel = "Risiko Tinggi";
-    riskDesc = "Disarankan untuk melakukan pemeriksaan gula darah ke dokter.";
-    extraNote = "";
+    riskDesc = "Sangat dianjurkan untuk melakukan pemeriksaan gula darah ke dokter.";
+    extraNote = "Jika ada keluhan (sering haus/lapar, sering buang air kecil, mudah lelah, luka sulit sembuh), coba bicarakan dengan tenaga kesehatan.";
   }
 
   ring.style.setProperty("--risk-color", color);
@@ -337,20 +337,7 @@ function finalizeResult(percent, ring, title, desc) {
       // Determine simple band: low <35, medium 35-64, high >=65
       const band = percent >= 65 ? "high" : percent >= 35 ? "medium" : "low";
 
-      // Get BMI if available (use current form inputs)
-      const w = Number(document.getElementById("weight")?.value) || null;
-      const h = Number(document.getElementById("height")?.value) || null;
-      let bmiNote = "";
-      if (w && h) {
-        const bmiVal = Math.round((w / ((h / 100) * (h / 100))) * 10) / 10;
-        if (bmiVal >= 30)
-          bmiNote =
-            "Catatan: IMT menunjukkan obesitas — pertimbangkan program penurunan berat badan.";
-        else if (bmiVal >= 25)
-          bmiNote =
-            "Catatan: IMT menunjukkan kelebihan berat badan — fokus pada penurunan berat badan 5-10%.";
-      }
-
+      
       let items = [];
       if (band === "low") {
         items = [
@@ -368,19 +355,32 @@ function finalizeResult(percent, ring, title, desc) {
         ];
       } else {
         items = [
-          "Segera lakukan pemeriksaan medis (cek gula darah & panel metabolik).",
-          "Mulai program perubahan gaya hidup terawasi: diet rendah gula & lemak, latihan terstruktur.",
+          "Segera konsultasi dengan dokter atau mengikuti program rehabilitasi/penurunan berat badan.",
           "Batasi konsumsi gula sederhana dan minuman manis.",
-          "Pertimbangkan konsultasi dokter atau program rehabilitasi/penurunan berat badan.",
+          "Mulai program perubahan gaya hidup terawasi: diet rendah gula & lemak, latihan terstruktur.",
+          "Tetapkan jadwal aktivitas fisik rendah dampak (jalan cepat/bersepeda/berenang) 30 menit/hari, 5–6 hari/minggu, sesuai arahan tenaga kesehatan.",
         ];
       }
-
-      // If there's a BMI-related note, add it at top
-      if (bmiNote) items.unshift(bmiNote);
-
+      
+      // Get BMI if available (use current form inputs)
+      const w = Number(document.getElementById("weight")?.value) || null;
+      const h = Number(document.getElementById("height")?.value) || null;
+      let bmiNote = "";
+      if (w && h) {
+        const bmiVal = Math.round((w / ((h / 100) * (h / 100))) * 10) / 10;
+        if (bmiVal >= 30)
+          bmiNote =
+            "Catatan: IMT menunjukkan obesitas — pertimbangkan program penurunan berat badan.";
+        else if (bmiVal >= 25)
+          bmiNote =
+            "Catatan: IMT menunjukkan kelebihan berat badan — fokus pada penurunan berat badan 5-10%.";
+      }
+      // If there's a BMI-related note, add it at the end
+      if (bmiNote) items.push(bmiNote);
+      
       recRoot.innerHTML =
-        '<ul class="rec-list">' +
-        items.map((i) => `<li>${i}</li>`).join("") +
+      '<ul class="rec-list">' +
+      items.map((i) => `<li>${i}</li>`).join("") +
         "</ul>";
 
       // Add a small badge indicating band
